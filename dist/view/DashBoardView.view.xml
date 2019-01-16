@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.murphy.ioprocapp.controller.DashBoardView" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Page title="{i18n>title}" enableScrolling="false" class="iopPageBckgrnd iopFontClass weight">
+	<content>
+			<l:Splitter id="mainROCSplitContainer" height="100%"  width="100%" class="iopMainSplitter">
+				<VBox class="iopPageBckgrnd" height="100%" >
+					<layoutData><l:SplitterLayoutData resizable="false" size="20%" /></layoutData>
+					<!--searchBar with navigation Button for Field View-->
+					<c:Fragment fragmentName="com.murphy.ioprocapp.fragment.FieldViewSearchNavBar" type="XML" id="fieldSearchBar"></c:Fragment>
+					<!--	The Initial Left side Split which will have the List of Wells/Field FragmentName:FieldList-->
+					<c:Fragment fragmentName="com.murphy.ioprocapp.fragment.FieldList" type="XML" id="hierarchyPanel"></c:Fragment>
+				</VBox>
+				<VBox height="auto">
+					<layoutData><l:SplitterLayoutData  minSize="600px" resizable="true" size="auto"/></layoutData>
+					<!--	The Middle Split which will have the Apps in a tabbed View say DownTime Capture FragmentName:AppsCollectionContainer-->
+					<c:Fragment fragmentName="com.murphy.ioprocapp.fragment.AppsCollectionContainer" type="XML" id="appscollectioncontainer"></c:Fragment>
+				</VBox>
+				<VBox height="auto" >
+					<layoutData><l:SplitterLayoutData resize="onResize" resizable="true" minSize="340px" size="23%"/></layoutData>
+					<!--	The Right side Split which will have the Task Management UI FragmentName:TaskManagement-->
+					<c:Fragment fragmentName="com.murphy.ioprocapp.fragment.TaskManagement" type="XML" id="taskmanagementpane"></c:Fragment>
+				</VBox>
+			</l:Splitter>
+		</content>
+	</Page>
+</mvc:View>

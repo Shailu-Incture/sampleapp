@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f">
+	<Popover contentMinWidth="500px" showHeader="false" contentHeight="auto" placement="Bottom" showArrow="false" afterOpen="onpopoverOpen">
+		<content>
+			<VBox>
+				<List rememberSelections="true" noDataText="no suggestion item avaliable" id="suggestionlist" mode="MultiSelect"
+					items="{dashBoardModel>/suggestionItems}" itemPress="onSuggestionListItemPress" selectionChange="onSuggestionListItemSelectionChange"
+					class="sapUiSizeCompact iopwbSuggListClass">
+					<CustomListItem type="Active">
+						<HBox class="sapUiTinyMarginTopBottom">
+							<f:Avatar
+								initials="{parts:[{path:'dashBoardModel>firstName'}, {path:'dashBoardModel>lastName'}], formatter:'com.murphy.ioprocapp.util.formatter.getinitials'}"
+								displaySize="XS" displayShape="Circle" class="sapUiTinyMarginEnd"/>
+							<HBox justifyContent="SpaceBetween" width="100%">
+								<VBox>
+									<Text text="{dashBoardModel>firstName} {dashBoardModel>lastName}" class="iopFontClass"></Text>
+								</VBox>
+								<HBox visible="{= ${dashBoardModel>/hierarchyDetails/currentLocationType} === 'WELL' || ${dashBoardModel>/hierarchyDetails/currentLocationType} === 'SEARCH'  ||  ${dashBoardModel>/hierarchyDetails/currentLocationType} === 'FACILITY'  ||  ${dashBoardModel>/isDispatch} === true }" width="7.65rem" justifyContent="SpaceBetween">
+									<core:Icon visible="{dashBoardModel>isDriving}" src="sap-icon://shipping-status" class="size5 sapUiTinyMarginEnd" color="#1a9898"></core:Icon>
+									<Text visible="{= ${dashBoardModel>isDriving} !== true}"/>
+									<Text text="{path:'dashBoardModel>distanceFromLocation',formatter:'com.murphy.ioprocapp.util.formatter.addMiles'}"
+										class="iopFontClass sapUiSmallMarginEnd"></Text>
+								</HBox>
+							</HBox>
+						</HBox>
+					</CustomListItem>
+				</List>
+			</VBox>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

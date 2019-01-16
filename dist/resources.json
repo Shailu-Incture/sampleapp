@@ -1,0 +1,180 @@
+{
+    "resources": [
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/DashBoardView.controller.js"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "images/coloboration.png"
+        },
+        {
+            "name": "images/well1.png"
+        },
+        {
+            "name": "images/powerbi.png"
+        },
+        {
+            "name": "images/well.png"
+        },
+        {
+            "name": "images/list.png"
+        },
+        {
+            "name": "fragment/SuggestionListPopover.fragment.xml"
+        },
+        {
+            "name": "fragment/taskDetailPanel.fragment.xml"
+        },
+        {
+            "name": "fragment/taskDetailRightPanel.fragment.xml"
+        },
+        {
+            "name": "fragment/ReportTab.fragment.xml"
+        },
+        {
+            "name": "fragment/SuggestionInputCustom.fragment.xml"
+        },
+        {
+            "name": "fragment/PermitToWork.fragment.xml"
+        },
+        {
+            "name": "fragment/createTaskPanel.fragment.xml"
+        },
+        {
+            "name": "fragment/attachmentGeneralItem.fragment.xml"
+        },
+        {
+            "name": "fragment/TaskManagement.fragment.xml"
+        },
+        {
+            "name": "fragment/taskCommentItem.fragment.xml"
+        },
+        {
+            "name": "fragment/FieldViewSearchNavBar.fragment.xml"
+        },
+        {
+            "name": "fragment/DownTimeCapture.fragment.xml"
+        },
+        {
+            "name": "fragment/attachmentImageItem.fragment.xml"
+        },
+        {
+            "name": "fragment/alarmActionList.fragment.xml"
+        },
+        {
+            "name": "fragment/FieldList.fragment.xml"
+        },
+        {
+            "name": "fragment/designateView.fragment.xml"
+        },
+        {
+            "name": "fragment/PowerBiPopup.fragment.xml"
+        },
+        {
+            "name": "fragment/AppsCollectionContainer.fragment.xml"
+        },
+        {
+            "name": "fragment/alarmList.fragment.xml"
+        },
+        {
+            "name": "fragment/addItemPanel.fragment.xml"
+        },
+        {
+            "name": "fragment/JsaSelectPopup.fragment.xml"
+        },
+        {
+            "name": "fragment/PageWithList.fragment.xml"
+        },
+        {
+            "name": "fragment/LocationSelectPopup.fragment.xml"
+        },
+        {
+            "name": "util/powerbi.js"
+        },
+        {
+            "name": "util/powerBiControls.js"
+        },
+        {
+            "name": "util/ErrorHandler.js"
+        },
+        {
+            "name": "util/Table.js"
+        },
+        {
+            "name": "util/formatter.js"
+        },
+        {
+            "name": "util/htmlcanvas.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "model/nonDispatchTaskItems.json"
+        },
+        {
+            "name": "model/reportDetails.json"
+        },
+        {
+            "name": "model/taskPanelDetail.json"
+        },
+        {
+            "name": "model/ODataOperationManager.js"
+        },
+        {
+            "name": "model/dynamicControls.json"
+        },
+        {
+            "name": "model/taskDetails.json"
+        },
+        {
+            "name": "model/wellList.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/fieldList.json"
+        },
+        {
+            "name": "view/DashBoardView.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "css/fonts.css"
+        },
+        {
+            "name": "css/taskpanel.css"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

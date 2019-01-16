@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" id="FieldViewSearchNavBar">
+	<Toolbar class="iopFLToolbar sapUiSizeCompact">
+		<Button enabled="{path: 'dashBoardModel>/hierarchyDetails/currentLocationType', formatter:'com.murphy.ioprocapp.util.formatter.navBackButtonEnable'}" press="onFieldListNavBack" icon="sap-icon://nav-back" class="iopFLBackBtn"></Button>
+		<SearchField value="{dashBoardModel>/search}" liveChange="onfiledWellSearch" class="iopInputClass"/>
+	</Toolbar>
+</core:FragmentDefinition>

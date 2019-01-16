@@ -1,0 +1,605 @@
+/*Kiruthika
+Styles for Task Panel*/
+
+.iopwbListClass {
+    padding: 0.5rem !important;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.iopwbListClass .sapMLIBHighlight {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.iopwbListClass .sapMLIBHighlight + .sapMLIBContent,
+.sapMListHighlight .sapMLIBContent:first-child {
+    margin-left: 0.6rem;
+}
+
+.iopwbListClass.sapMLIBHoverable:hover {
+    background: #fff;
+}
+
+.iopwbTimeClass {
+    padding-bottom: 0.5rem;
+    border-bottom: solid 0.01rem #c3c3c3;
+    width: 100%;
+}
+
+.iopwbTimeClass.sapMLabel {
+    color: #909090;
+    font-size: 0.75rem;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.iopwbStatusClass {
+    background: #74ce3d;
+    padding: 0.15rem 0.65rem 0.2rem 0.65rem;
+    margin: 0.4rem 0rem 0.6rem 0rem;
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.iopwbStatusClass.sapMText {
+    font-size: 0.75rem;
+}
+
+.iopwbMsgBoxClass {
+    padding-top: 0.5rem;
+    border-top: solid 0.01rem #c3c3c3;
+    width: 100%;
+}
+
+.iopwbDescClass {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.iopwbDescClass.sapMTitleStyleAuto {
+    font-size: 0.95rem;
+}
+
+.iopwbTextItalicClass {
+    font-style: italic;
+    padding-right: 0.2rem;
+    font-weight: 600;
+    color: #888888;
+    font-size: 0.75rem;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.iopwbAssignedLabelClass {
+    font-style: italic;
+    padding-right: 0.2rem;
+    font-weight: 600;
+    color: #888888;
+    font-size: 0.75rem;
+}
+
+.iopwbTransBtn .sapMBtnTransparent {
+    color: #949494;
+    font-weight: 600;
+    font-size: 0.725rem;
+}
+
+.iopwbTransBtn:not(.sapMBtnDisabled) .sapMBtnTransparent>.sapMBtnIcon {
+    color: #949594;
+}
+
+.iopwbTransBtn.sapMBtn {
+    height: 2rem;
+}
+
+.iopwbTabBarClass .sapMITBContent {
+    background-color: transparent !important
+}
+
+.iopwbTabBarClass .sapMITBScrollContainer {
+    width: 95%;
+    margin-left: 0.75rem !important;
+    margin-right: 0rem !important;
+}
+
+.iopwbTabBarClass .sapMITBArrowScroll {
+    display: none;
+}
+
+.iopwbTabBarClass .sapMITBTextOnly .sapMITBFilter {
+    margin: 0;
+    padding: 0 0.5rem;
+}
+
+.iopwbListHighlightGreyClass .sapMLIBHighlight {
+    background: #8e8e8e;
+}
+
+.iopwbListHighlightOrangeClass .sapMLIBHighlight {
+    background: #ffbf5b;
+}
+
+.iopwbBoxStyle.sapMVBox {
+    padding: 0.3rem;
+}
+
+.iopwbBoxStyle.sapMHBox {
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    height: 2.5rem;
+}
+
+.iopwbBtnClass.sapMBtn {
+    height: 2rem;
+}
+
+.iopwbBtnClass.sapUiSizeCompact .sapMBtnInner,
+.iopwbBtnClass.sapUiSizeCompact .sapMBtnIcon {
+    background-color: #02265a;
+    border-color: #02265a;
+    color: #fff;
+}
+
+.iopwbCommentClass.sapMText {
+    font-size: 0.8rem;
+}
+
+.iopwbAssignedToBoxClass {
+    margin-top: 0.2rem;
+}
+
+.iopwbLocationTextClass {
+    font-size: 0.8rem;
+}
+
+.iopwbLocationValClass {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.iopwbLocationBoxStyle {
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+.iopwbNonDispatchCloseIcon {
+    margin-left: 0.5rem!important;
+    margin-right: 0.3rem!important;
+    cursor: pointer;
+}
+
+.iopwbAddItemFragClass {
+    padding: 0.5rem;
+}
+
+.iopwbAddItemBtnClass .sapMBtnInner {
+    border: none;
+}
+
+.iopwbProductTextStyle {
+    margin-left: 1.55rem;
+}
+
+.iopwbTaskItemTbl .sapMLIB {
+    border-bottom: none;
+}
+
+.iopwbFlexBoxClass {
+    width: 97% !important;
+}
+
+.iopwbCreatedByClass {
+    font-size: 0.75rem;
+    color: #4b8197;
+    font-weight: bold;
+}
+
+.iopwbCreatedByNameClass {
+    font-size: 0.95rem;
+    color: #4b8197;
+    font-weight: bolder;
+}
+
+.iopwbAvatarClass.sapFAvatarS {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.iopwbTaskLabelClass {
+    font-weight: bold;
+    color: #9a9a9a;
+    font-size: 0.85rem;
+}
+
+.iopwbTaskBoderLightClass.sapMSlt,
+.iopwbTaskBoderLightClass .sapMInputBaseInner,
+.iopwbTaskBoderLightClass .sapMMultiInputBorder {
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+.iopwbCommentUser {
+    color: #828282;
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.iopwbCommentTime {
+    color: #9a9a9a;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.725rem;
+}
+
+.iopwbCommentArea::placeholder {
+    font-size: 0.8rem;
+    font-family: Open Sans !important;
+    font-style: normal;
+    color: #b9b9b9;
+}
+
+.iopwbCommentArea .sapMInputBaseInner {
+    border: none;
+}
+
+.iopwbCommentArea {
+    border: solid lightgrey 0.05rem;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.iopwbCommentArea.sapMInputBase.sapMTextArea .sapMTextAreaInner {
+    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    font-family: Open Sans !important;
+}
+
+.iopwbCommentArea .sapMInputDivWrapper {
+    width: 99% !important;
+}
+
+.iopwbCommentsClass {
+    font-size: 0.8rem;
+}
+
+.iopwbCommentBoxClass {
+    border-bottom: solid lightgrey 0.05rem;
+    padding-bottom: 0.5rem;
+}
+
+.iopwbCommentPostClass {
+    border: solid lightgrey 0.05rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 0.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.iopwbSplitBorderClass {
+    border-left: solid lightgray 0.05rem;
+}
+
+.iopwbCollabIconTab .sapMITBHead {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 1rem 0.75rem 0 0.75rem;
+    top: 0.9rem;
+}
+
+.iopwbCollabIconTab .sapMITBContent {
+    padding: 0.75rem;
+}
+
+.iopwbCollabIconTab .sapMITBTextOnly .sapMITBText {
+    font-family: Open Sans !important;
+}
+
+.iopwbCollabIconTab .sapMITBInLine .sapMITBFilter>.sapMITBText {
+    margin: 0rem;
+}
+
+.iopwbCollabIconTab .sapMITBInLine.sapMITBTextOnly>.sapMITBVertical.sapMITBFilter>.sapMITBText + .sapMITBContentArrow {
+    height: 0.5rem;
+}
+
+.iopwbCollabIconTab .sapMITBInLine.sapMITBTextOnly>.sapMITBVertical {
+    height: 1.65rem;
+}
+
+.iopwbPostBtnClass .sapMBtnInner {
+    background: #02265a !important;
+    color: #fff !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+    font-size: 13px;
+}
+
+.iopwbLocationTClass {
+    font-size: 0.75rem;
+    color: #0070b1;
+}
+
+.iopwbLinkClass.sapMLnk {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: Open Sans !important;
+}
+
+.iopwbDetailDialogClass.sapMDialog.sapMDialog-NoHeader:not(.sapMDialog-NoFooter):not(.sapMDialogWithSubHeader) {
+    height: 90%;
+}
+
+.iopwbDetailDialogClass{
+	overflow: visible;
+}
+
+.ipowbAttachmentTextClass {
+    font-size: 0.75rem;
+}
+
+.iopwbThumbnailClass {
+    margin-top: 0.2rem;
+}
+
+.iopwbAttachmentListClass {
+    padding: 0.5rem !important;
+    border: solid #e6e6e6 0.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.iopwbAttachmentListClass .sapMLIBHighlight {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.iopwbAttachmentListClass .sapMLIBHighlight + .sapMLIBContent,
+.sapMListHighlight .sapMLIBContent:first-child {
+    margin-left: 0.6rem;
+}
+
+.iopwbFileUploaderClass.sapUiSizeCompact .sapMInputBaseInner {
+    width: 103%;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.iopwbFileUploaderClass .sapMBtnInner {
+    background-color: #00a3ff;
+    border: none;
+    border-radius: 0 0.2rem 0.2rem 0;
+    color: #ffffff;
+}
+
+.iopwbFileUploaderClass .sapMBtnIcon {
+    color: #ffffff;
+}
+
+.iopwbAttachmentLinkClass.sapMLnk {
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: pre-line;
+    word-wrap: break-word;
+    font-family: Open Sans !important;
+}
+
+.iopwbAttachmentLinkBoxClass {
+    top: 0.2rem;
+    width: 95%;
+}
+
+.iopwbAttachmentLinkBoxClass .sapMFlexItem {
+    width: 99%;
+}
+
+.iopwbAttTextBoxClass {
+    top: -0.2rem;
+}
+
+.iopwbMultiInputClass.sapMMultiInput .sapMInputBaseInner {
+    border: 0;
+    padding-left: 0;
+    padding-right: 0.125rem;
+    height: 1.6rem;
+}
+
+.iopwbMultiInputClass.sapMMultiInput {
+    max-width: 12.25rem;
+}
+
+.iopwbSuggListClass.sapUiSizeCompact .sapMLIB>.sapMLIBSelectS:first-child,
+.iopwbSuggListClass.sapUiSizeCompact .sapMLIB>.sapMLIBSelectM:first-child {
+    margin-left: 0rem;
+}
+
+.iopwbSuggListClass.sapMList {
+    min-width: 12.25rem;
+}
+
+.iopwbTokenClass .sapMTokenText {
+    font-family: Open Sans !important;
+}
+
+.iopwbFooterClass.sapMIBar {
+    position: fixed;
+    width: 100%;
+    bottom: 0rem;
+}
+
+.iopwbComboBoxClass.sapMComboBoxTextField {
+    border: none;
+}
+
+.iopwbAdditionalItemTab .sapMITBHead {
+    margin: 0rem;
+}
+
+.iopwbAdditionalItemTab .sapMITBTextOnly .sapMITBText {
+    font-family: Open Sans !important;
+}
+
+.iopwbAdditionalItemTab .sapMITBInLine .sapMITBFilter>.sapMITBText {
+    margin: 0rem;
+}
+
+.iopwbAdditionalItemTab .sapMITBInLine.sapMITBTextOnly>.sapMITBVertical.sapMITBFilter>.sapMITBText + .sapMITBContentArrow {
+    height: 0.5rem;
+}
+
+.iopwbAdditionalItemTab .sapMITBInLine.sapMITBTextOnly>.sapMITBVertical {
+    height: 1.65rem;
+}
+
+.iopwbAdditionalItemTab .sapMITH {
+    box-shadow: none;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.iopwbAdditionalItemTab .sapMITBContent {
+    border-bottom: none;
+}
+
+.iopwbAdditionalItemTab .sapMITBContainerContent {
+    margin-left: 0.3rem;
+}
+
+.iopwbNewStatusColor {
+    color: #808080;
+    font-weight: bold;
+}
+
+.iopwbResolvedStatusColor {
+    color: #00b3e3;
+    font-weight: bold;
+}
+
+.iopwbInProgressStatusColor {
+    color: #f68e56;
+    font-weight: bold;
+}
+
+.iopwbDispatchedStatusColor {
+    color: #89c757;
+    font-weight: bold;
+}
+
+.iopwbReturnedStatusColor {
+    color: #ff4451;
+    font-weight: bold;
+}
+
+.iopwbBreadCurmbClass .sapMText {
+    font-family: Open Sans !important;
+}
+
+.iopwbBreadCurmbClass .sapMLnk {
+    font-family: Open Sans !important;
+}
+
+.iopwbLabelRequiredClass.sapMLabelRequired:before {
+    color: #c14646;
+    font-size: 0.8rem;
+    top: 0rem;
+}
+
+.iopwbLocLabelClass {
+    font-weight: bold;
+    color: #313131;
+    font-size: 0.85rem;
+}
+
+.iopwbCollabTitleClass {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #3a5972;
+}
+
+.iopwbCollabTitleBoxClass {
+    padding: 0.5rem;
+    background: #d6e4f5;
+}
+
+.iopwbAddScrollContClass {
+    max-height: 7rem;
+}
+
+.iopwbNewStatusBgColor,
+.iopwbListNewStatusBgColor .sapMLIBHighlight {
+    background: #808080;
+}
+
+.iopwbResolvedStatusBgColor,
+.iopwbListResolvedStatusBgColor .sapMLIBHighlight {
+    background: #00b3e3;
+}
+
+.iopwbInProgressStatusBgColor,
+.iopwbListInProgressStatusBgColor .sapMLIBHighlight {
+    background: #f68e56;
+}
+
+.iopwbDispatchedStatusBgColor,
+.iopwbListDispatchedStatusBgColor .sapMLIBHighlight {
+    background: #89c757;
+}
+
+.iopwbReturnedStatusBgColor,
+.iopwbListReturnedStatusBgColor .sapMLIBHighlight {
+    background: #ff4451;
+}
+
+.iopwbMultiComboBoxClass.sapMComboBoxTextField{
+    border-color: #dedcdc;
+}
+
+.iopwbMultiComboBoxClass{
+	width: 12.25rem !important;
+}
+
+.iopwbCloseBtnClass{
+	position: fixed;
+    z-index: 3;
+    top: -1.4rem;
+    right: -1rem;
+}
+
+.iopwbCloseBtnIEClass{
+	position: fixed;
+    z-index: 3;
+    top: 0.1rem;
+    right: 3rem;
+}
+
+.iopwbCloseBtnClass .sapMBtnTransparent {
+    border-radius: 30px;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    background-color: white;
+}
+
+.iopwbCloseBtnClass .sapMBtnIcon {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+}
+
+.iopwbCloseBtnClass.sapMBtn:hover>.sapMBtnTransparent.sapMBtnHoverable {
+    background-color: #fff;
+}
+
+.sapContrast.sapMFooter-CTX .sapMBtnInner {
+    border-color: #b8c9da;
+}
+
+.iopwbAssignedTextClass{
+	font-size: 0.8rem;
+	width: 12rem;
+}
+
+/*Kiruthika
+End of Styles for Task Panel*/

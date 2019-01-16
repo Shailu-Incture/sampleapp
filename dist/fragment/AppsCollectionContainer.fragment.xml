@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" id="AppsCollectionContainer">
+	<HBox height="0" justifyContent="End">
+		<Select class="iopSelectClass iopAlarmSelectClass iopAlarmClassStyle sapUiSizeCompact" change="onAppsTabSelect"
+			selectedKey="{dashBoardModel>/alarmDetailKey}" visible="{= ${dashBoardModel>/appsTab/currentSelectKey} === 'alarms'}">
+			<core:Item key="All" text="All" class="iopAlarmSelectClass"/>
+			<core:Item key="Acknowledged" text="Acknowledged" class="iopAlarmSelectClass"/>
+		</Select>
+	</HBox>
+	<IconTabBar select="onAppsTabSelect" id="idIconTabBarNoIcons" selectedKey="{dashBoardModel>/appsTab/currentSelectKey}"
+		class="sapUiResponsiveContentPadding iopIconTab" expandable="false">
+		<items>
+			<IconTabFilter visible="true" key="alarms" text="Alarms">
+				<core:Fragment fragmentName="com.murphy.ioprocapp.fragment.alarmList" type="XML" id="alarmList"></core:Fragment>
+			</IconTabFilter>
+			<IconTabFilter key="downTimeCapture" text="{i18n>downtimecpture}">
+				<core:Fragment fragmentName="com.murphy.ioprocapp.fragment.DownTimeCapture" type="XML" id="downtimecptureapp"></core:Fragment>
+			</IconTabFilter>
+			<IconTabFilter key="permitToWork" visible="true" text="{i18n>permittowork}">
+				<core:Fragment fragmentName="com.murphy.ioprocapp.fragment.PermitToWork" type="XML" id="permittoworkapp"></core:Fragment>
+			</IconTabFilter>
+			<IconTabFilter key="analytics" visible="true" text="{i18n>analytics}">
+				<HBox justifyContent="End" class="iopDTPanelClass">
+					<Button text="Download Report" class="sapUiSizeCompact iopBtnClass sapUiTinyMarginEnd" press="onPressDownloadReport"/>
+				</HBox>
+			</IconTabFilter>
+			<!--<IconTabFilter key="reports" visible="true" text="Reports">
+				<core:Fragment fragmentName="com.murphy.ioprocapp.fragment.ReportTab" type="XML" id="taskReport"></core:Fragment>
+			</IconTabFilter>-->
+		</items>
+	</IconTabBar>
+</core:FragmentDefinition>

@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" id="JsaSelectPopup">
+	<Dialog class="sapUiSizeCompact" id="jsaDialog" title="{i18n>jsaselecttitle}" draggable="true" resizable="true">
+		<SearchField placeholder="{i18n>search}" showSearchButton="true" visible="true" />
+		<Table mode="SingleSelectMaster" fixedLayout="false" rememberSelections="true">
+			<columns>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<!--	<Text text="{i18n>jsano}"/>-->
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active">
+					<cells>
+						<Text text="J12345"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem type="Active">
+					<cells>
+						<Text text="J54329"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem type="Active">
+					<cells>
+						<Text text="J08543"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+			<Button text="{i18n>cancel}" class="iopBtnClass" press="onJsaPopupCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

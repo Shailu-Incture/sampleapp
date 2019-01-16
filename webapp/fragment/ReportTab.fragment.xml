@@ -1,0 +1,146 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" id="TaskManagement"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data">
+	<VBox class="iopRepOutboxClass">
+		<HBox>
+			<HBox width="60%" class="iopRepBoxClass sapUiTinyMarginEnd ">
+				<!--<Title text="Task Overview" class="iopFontClass"/>
+				<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height="12rem" width="100%" vizType='donut'>
+					<viz:dataset>
+						<viz.data:FlattenedDataset data="{oReportDetailModel>/taskCount}">
+							<viz.data:dimensions>
+								<viz.data:DimensionDefinition name="Status" value="{oReportDetailModel>status}"/>
+							</viz.data:dimensions>
+							<viz.data:measures>
+								<viz.data:MeasureDefinition name="Count" value="{oReportDetailModel>count}"/>
+							</viz.data:measures>
+						</viz.data:FlattenedDataset>
+					</viz:dataset>
+					<viz:feeds>
+						<viz.feeds:FeedItem uid="size" type="Measure" values="Count"/>
+						<viz.feeds:FeedItem uid="color" type="Dimension" values="Status"/>
+					</viz:feeds>
+				</viz:VizFrame>-->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Open" subheader="Dispatch - Inprogress"
+					press="press">
+					<TileContent>
+						<NumericContent valueColor="Critical" value="3" icon="sap-icon://travel-expense" />
+					</TileContent>
+				</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Resolved" subheader="Action with ROC"
+					press="press">
+					<TileContent>
+						<NumericContent valueColor="Good" value="3" icon="sap-icon://travel-expense" />
+					</TileContent>
+				</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginBottom tileLayout"
+					header="Closed" subheader="Actions Complete" press="press">
+					<TileContent>
+						<NumericContent valueColor="Neutral" value="3" icon="sap-icon://travel-expense" />
+					</TileContent>
+				</GenericTile>
+			</HBox>
+			<VBox width="40%" class="iopRepBoxClass ">
+				<!--<Title text="User Workload" class="iopFontClass"/>
+				<ScrollContainer height="{dashBoardModel>/screenSize/taskReportHeight}" vertical="true">
+					<Table class="sapUiSizeCompact sapUiTinyMarginEnd iopFontClass iopRepWLTableClass" items="{oReportDetailModel>/workload}">
+						<columns>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="ROC Personnal"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Tasks Created"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Tasks Closed"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<Text text="{oReportDetailModel>userName}" class="iopFontClass iopRepFontClass"/>
+									<Text text="{oReportDetailModel>createdNo}" class="iopFontClass iopRepFontClass"/>
+									<Text text="{oReportDetailModel>closedNo}" class="iopFontClass iopRepFontClass"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</ScrollContainer>-->
+				<HBox>
+					<Input type="Text" placeholder="{i18n>location}" showValueHelp="true" valueHelpRequest="onLocationValueHelp" width="auto"
+						class="iopInputClass sapUiSizeCompact "></Input>
+					<Input type="Text" placeholder="Assigned To" showValueHelp="true" valueHelpRequest="onJsaValueHelp" width="auto"
+						class="iopInputClass sapUiTinyMarginBegin sapUiSizeCompact"></Input>
+				</HBox>
+				<HBox>
+					<DatePicker placeholder="{i18n>datefrom}" width="auto" class="iopInputClass sapUiSizeCompact sapUiTinyMarginEnd"/>
+					<DatePicker placeholder="{i18n>dateto}" width="auto" class="iopInputClass sapUiSizeCompact "/>
+				</HBox>
+				<HBox justifyContent="End">
+					<Button text="Clear" press="onReportSearchClear" class="sapUiSizeCompact iopBtnClass iopClearBtn sapUiTinyMarginEnd"/>
+					<Button text="Search" press="onReportSearchPress" class="sapUiSizeCompact iopBtnClass iopSaveBtn "/>
+				</HBox>
+			</VBox>
+		</HBox>
+		<HBox justifyContent="SpaceBetween" alignContent="Center" alignItems="Center">
+			<Title text="Detailed Task List" class="iopFontClass"/>
+			<Button icon="sap-icon://download" class="sapUiSizeCompact iopBtnClass" press="onPressDownloadReport"/>
+		</HBox>
+		<ScrollContainer height="{dashBoardModel>/screenSize/detailReportHeight}" vertical="true">
+			<Table class="sapUiSizeCompact sapUiTinyMarginEnd iopFontClass iopRepTableClass" mode="SingleSelectMaster"
+				items="{dashBoardModel>/reportList}" alternateRowColors="true" busy="{dashBoardModel>/busyIndicators/detailReport}" busyIndicatorDelay="0">
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="4%">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="TID"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Title"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Location"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Classification"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Created By"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Assigned To"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Created On"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Ack On"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Resolved On"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Closed On"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopRepFontClass iopRepTitleClass" text="Status"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Active">
+						<cells>
+							<Text text="{dashBoardModel>requestId}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>description}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>location}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>classification}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>createdBy}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>assignedTo}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>createdAtDisplay}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>acknowledgedAtDisplay}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>resolvedAtDisplay}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>completedAtDisplay}" class="iopFontClass iopRepFontClass"/>
+							<Text text="{dashBoardModel>status}" class="iopFontClass iopRepFontClass"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</ScrollContainer>
+	</VBox>
+</core:FragmentDefinition>

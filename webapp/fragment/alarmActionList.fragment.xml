@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Popover showArrow="true" showHeader="false" afterClose="alarmActionListClose">
+		<VBox class="sapUiTinyMargin">
+			<Button id="idTrendBtn" icon="sap-icon://business-objects-experience" text="Trends" width="100%"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction" visible="false"/>
+			<Button id="idDispatchBtn" icon="sap-icon://physical-activity" text="Dispatch" width="100%"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+			<Button id="idDesignateBtn" icon="sap-icon://history" text="Designate" width="100%"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+			<Button id="idAcknowledgeBtn" icon="sap-icon://accept" text="Acknowledge" width="100%"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+		</VBox>
+	</Popover>
+</core:FragmentDefinition>

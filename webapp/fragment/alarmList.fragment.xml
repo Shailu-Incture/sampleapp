@@ -1,0 +1,167 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" id="TaskManagement"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:ui="sap.ui.table" xmlns:myCustom="com.murphy.ioprocapp.util">
+	<VBox class="">
+		<!--<HBox justifyContent="SpaceAround" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+			<VBox width="23%">
+				<Label text="Time" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/time}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+			<VBox width="23%">
+				<Label text="Classification" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/classification}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+			<VBox width="23%">
+				<Label text="Tier Level" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/tierLevel}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+			<VBox width="23%">
+				<Label text="Route" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/route}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+		</HBox>
+		<HBox justifyContent="SpaceAround" class="sapUiTinyMarginBegin">
+			<VBox width="23%">
+				<Label text="Alarm Condition" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/alarmCondition}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+			<VBox width="23%">
+				<Label text="Value" class="iopFontClass iopwbTaskLabelClass "/>
+				<Input value="{dashBoardModel>/alarmSearchParams/value}" class="iopInputClass sapUiSizeCompact iopInputHeightClass"/>
+			</VBox>
+			<VBox width="23%"></VBox>
+			<VBox width="23%">
+				<HBox alignItems="End">
+					<Button text="Clear" press="onAlarmSearchClear" class="sapUiSizeCompact iopBtnClass iopClearBtn sapUiSmallMarginTop sapUiTinyMarginEnd"/>
+					<Button text="Search" press="onAlarmSearchPress" class="sapUiSizeCompact iopBtnClass iopSaveBtn sapUiSmallMarginTop"/>
+				</HBox>
+			</VBox>
+		</HBox>-->
+		<!--<Toolbar class="">
+			<Text text="List of Alarms" class="iopFontClass sapUiTinyMarginBegin"/>
+			<ToolbarSpacer/>
+			<Button id="idTrendBtn" icon="sap-icon://business-objects-experience" text="Trends" enabled="false"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+			<Button id="idDispatchBtn" icon="sap-icon://activity-2" text="Dispatch" enabled="false"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+			<Button id="idDesignateBtn" icon="sap-icon://thumb-up" text="Designate" enabled="false"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>
+			<Button id="idAcknowledgeBtn" icon="sap-icon://accept" text="Acknowledge" enabled="false"
+				class="sapUiSizeCompact iopBtnClass iopAlarmBtnClass" press="onPressAlarmAction"/>-->
+		<!--<SearchField class="sapUiSizeCompact" width="20%"/>-->
+		<!--<HBox class="iopAlarmFilterBoxClass">
+				<Input class="sapUiSizeCompact iopAlarmFilterClass" placeholder="Filter" liveChange="onSearchAlarmData"/>
+				<core:Icon src="sap-icon://filter" class="iopAlarmFilterClass"/>
+			</HBox>
+		</Toolbar>-->
+		<ScrollContainer height="{dashBoardModel>/screenSize/alarmListHeight}" vertical="true" class="">
+			<myCustom:Table class="sapUiSizeCompact sapUiTinyMarginEnd iopFontClass" mode="MultiSelect" items="{oReportDetailModel>/alarmList}"
+				alternateRowColors="true" id="idAlarmList" rightPress="onRightPress" busy="{dashBoardModel>/busyIndicators/alarmListBusy}"
+				busyIndicatorDelay="0">
+				<myCustom:columns>
+					<!--<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Point ID"/>
+					</Column>-->
+					<Column minScreenWidth="Tablet" demandPopin="true" width="12%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Date Time"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="15%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Description"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="15%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Facility Description"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Tier Level"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Route"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="12%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Alarm Condition"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="10%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Value"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Classification - Downtime"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" width="7.5%">
+						<Text class="iopFontClass iopAlarmListTextClass iopRepTitleClass" text="Classification"/>
+					</Column>
+					<Column width="2rem" visible="{= ${dashBoardModel>/alarmDetailKey} !== 'Acknowledged'}"></Column>
+				</myCustom:columns>
+				<myCustom:items>
+					<ColumnListItem type="Active">
+						<cells>
+							<!--<Text text="{oReportDetailModel>pointId}" class="iopFontClass iopAlarmListTextClass"/>-->
+							<HBox width="100%">
+								<Text text="{oReportDetailModel>timeStampAsString}"   class="iopFontClass iopAlarmListTextClass"/>
+							</HBox>
+							<Label text="{oReportDetailModel>longDescription}" tooltip="{oReportDetailModel>longDescription}" class="iopFontClass iopAlarmListTextClass"/>
+							<Label text="{oReportDetailModel>facDescription}" tooltip="{oReportDetailModel>facDescription}" class="iopFontClass iopAlarmListTextClass"/>
+							<!--<Select class="iopSelectClass iopAlarmSelectClass" selectedKey="{oReportDetailModel>classification}">
+								<core:Item key="" text="" class="iopAlarmSelectClass"/>
+								<core:Item key="Downtime" text="Downtime" class="iopAlarmSelectClass"/>
+								<core:Item key="Non Downtime" text="Non Downtime" class="iopAlarmSelectClass"/>
+							</Select>-->
+							<Text text="{oReportDetailModel>tier}" class="iopFontClass iopAlarmListTextClass"/>
+							<Text text="{oReportDetailModel>route}" class="iopFontClass iopAlarmListTextClass"/>
+							<Text text="{oReportDetailModel>alarmCondition}" class="iopFontClass iopAlarmListTextClass"/>
+							<Text text="{oReportDetailModel>alarmValue}" class="iopFontClass iopAlarmListTextClass"/>
+							<HBox width="100%" justifyContent="Center">
+								<Switch state="{oReportDetailModel>downTimeClassifierDT}" customTextOn="Yes" customTextOff="No" class="iopAlarmSwitchClass"/>
+							</HBox>
+							<HBox>
+								<RadioButtonGroup width="100%" class="sapUiSizeCompact iopAlarmRBClass" select="onSelectAlarmClassification"
+									selectedIndex='{path:"oReportDetailModel>downTimeClassifier", formatter:"com.murphy.ioprocapp.util.formatter.getClassificationIndex"}'
+									visible="{= ${dashBoardModel>/alarmDetailKey} !== 'Acknowledged'}">
+									<buttons>
+										<RadioButton text="{oReportDetailModel>/text/downtime}"/>
+										<RadioButton text="{oReportDetailModel>/text/nondowntime}"/>
+									</buttons>
+								</RadioButtonGroup>
+								<Text text='{path:"oReportDetailModel>downTimeClassifier", formatter:"com.murphy.ioprocapp.util.formatter.alarmClassification"}' class="iopFontClass iopAlarmListTextClass"
+									visible="{= ${dashBoardModel>/alarmDetailKey} === 'Acknowledged'}"/>
+							</HBox>
+							<VBox width="100%" visible="{= ${dashBoardModel>/alarmDetailKey} !== 'Acknowledged'}">
+								<HBox justifyContent="SpaceBetween" width="100%" height="50%">
+									<VBox width="45%">
+										<core:Icon src="sap-icon://circle-task-2" class="iopAlarmIndicatorClass" tooltip="{oReportDetailModel>alarmSeverity}"
+											visible='{path:"oReportDetailModel>alarmSeverity", formatter:"com.murphy.ioprocapp.util.formatter.getAlarmColor"}'/>
+									</VBox>
+									<VBox width="45%">
+										<!--<Image src="../images/well.png" width="0.9rem"
+											visible='{path:"oReportDetailModel>muwi", formatter:"com.murphy.ioprocapp.util.formatter.wellCheck"}'/>-->
+										<HBox class="iopWellClass" width="0.9rem" tooltip="Well"
+											visible='{path:"oReportDetailModel>muwi", formatter:"com.murphy.ioprocapp.util.formatter.wellCheck"}'/> 
+									</VBox>
+								</HBox>
+								<HBox justifyContent="SpaceBetween" width="100%" height="50%">
+									<VBox width="45%">
+										<core:Icon src="sap-icon://physical-activity" class="" size="0.9rem" tooltip="Dispatched"
+											visible='{path:"oReportDetailModel>isDispatch", formatter:"com.murphy.ioprocapp.util.formatter.showAlarmIcons"}'/>
+									</VBox>
+									<VBox width="45%">
+										<core:Icon src="sap-icon://history" class="" size="0.9rem" tooltip="Designated"
+											visible='{path:"oReportDetailModel>isDesignate", formatter:"com.murphy.ioprocapp.util.formatter.showAlarmIcons"}'/>
+									</VBox>
+								</HBox>
+							</VBox>
+						</cells>
+					</ColumnListItem>
+				</myCustom:items>
+			</myCustom:Table>
+		</ScrollContainer>
+		<VBox id="idPageNumberDiv" justifyContent="Center" alignItems="Center" height="3.5rem">
+			<Label id="idCurrentPage" class="iopPageNumberStyleClass"/>
+			<HBox class="iopPageLinkBoxClass">
+				<Button id="idPrevButton" icon="sap-icon://close-command-field" class="sapUiSizeCompact" press="onScrollLeft"/>
+				<HBox items="{dashBoardModel>/pageArray}">
+					<Link text="{dashBoardModel>text}" press="onPageClick" class="iopPaginationNumbers"/>
+				</HBox>
+				<Button id="idNextButton" icon="sap-icon://open-command-field" class="sapUiSizeCompact" press="onScrollRight"/>
+			</HBox>
+		</VBox>
+	</VBox>
+</core:FragmentDefinition>

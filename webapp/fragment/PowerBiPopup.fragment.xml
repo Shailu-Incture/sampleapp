@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" id="powerBiDialogFragment">
+	<Dialog class="sapUiSizeCompact" id="powerBiDialog"  title="TF Gas Flow Rate" draggable="true" afterOpen="afterPoweBiPopupOpen"><!--{i18n>pbi}-->
+	
+		<VBox>
+					<!--	<HBox>
+							<Button text="CLICK for BI" press="onClick"/>
+							<Button text="CLICK for Screenshot" press="onScreenshot"/>
+						</HBox>-->
+						<VBox  >
+							<!-- <HBox id="hbox" class="color"> <Text text="1234567890-sxfghjkldfghjk" 
+						/> -->
+						<!--To be added-->
+							<core:HTML  content="&lt;div id=&quot;embedContainer&quot;width=&quot;100%&quot; height=&quot;100%&quot;&gt; &lt;/div&gt;"></core:HTML>
+							<!--<HBox class="iopPowerBiTestClass"/> -->
+						<!--End-->
+							<!-- <html:embed src="http://bencreasy.com/object-versus-embed/"
+						width="50%" height="50%" />
+					<html:object data="http://bencreasy.com/object-versus-embed/"
+						width="50%" height="50%" /> -->
+							<!-- </HBox> -->
+						</VBox>
+					</VBox>
+		<buttons>
+		<!--	<Button text="Snapshot" icon="sap-icon://add-photo" press="onPowerBiSnapShot"/>-->
+				<Button text="" type="Transparent" icon="sap-icon://full-screen" press="onPowerBiFullscreen"/>
+			<Button text="{i18n>cancel}" press="onPowerBiCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

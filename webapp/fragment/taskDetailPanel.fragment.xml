@@ -1,0 +1,120 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.f"
+	xmlns:table="sap.ui.table">
+	<VBox id="idCreateDetailLeftPanel">
+		<HBox width="95%" class="sapUiMediumMarginBegin iopwbTimeClass">
+			<HBox width="14.65rem" class="sapUiMediumMarginTop">
+				<f:Avatar
+					initials="{parts:[{path:'oTaskPanelDetailModel>/taskEventDto/createdByDisplay'}], formatter:'com.murphy.ioprocapp.util.formatter.getinitials'}"
+					displaySize="S" displayShape="Circle" class="sapUiTinyMarginTop iopwbAvatarClass"/>
+				<VBox class=" sapUiSmallMargin" width="100%">
+					<Text text="Created by" class="iopFontClass iopwbCreatedByClass" visible="{= ${dashBoardModel>/isCreateTask} === true}"/>
+					<Text text="{oTaskPanelDetailModel>/taskEventDto/createdByDisplay}" class="iopFontClass iopwbCreatedByNameClass"/>
+					<Text text='{parts:["oTaskPanelDetailModel>/taskEventDto/createdAtInString", "i18n>CREATED_ON"], formatter:"com.murphy.ioprocapp.util.formatter.getLocalDate"}' visible="{= ${dashBoardModel>/isCreateTask} !== true}"
+						class="iopFontClass iopwbTextItalicClass"/>
+				</VBox>
+			</HBox>
+			<l:Grid id="idDynGrid" defaultSpan="L4 M6 S12" vSpacing="0" class="sapUiSmallMarginTop sapUiTinyMarginBottom"/>
+		</HBox>
+		<VBox class="sapUiSmallMarginTop sapUiMediumMarginBegin iopwbTimeClass" width="95%">
+			<HBox class=" sapUiTinyMarginBottom">
+				<Label text="Title of Task" width="13.35rem" class="iopFontClass iopwbTaskLabelClass"/>
+				<Text text="{oTaskPanelDetailModel>/taskEventDto/subject}" class="sapUiSmallMarginBegin iopFontClass"
+					visible="{= ${dashBoardModel>/isCreateTask} !== true}"/>
+				<Text text="{dashBoardModel>/taskSubject1} / {dashBoardModel>/taskSubject2} {dashBoardModel>/taskSubject3}" class="sapUiSmallMarginBegin iopFontClass"
+					visible="{= ${dashBoardModel>/isCreateTask} === true}"/>
+			</HBox>
+			<HBox width="100%">
+				<Label text="Description" width="13.35rem" class="iopFontClass iopwbTaskLabelClass"/>
+				<TextArea value="{oTaskPanelDetailModel>/taskEventDto/description}" enabled="{= ${dashBoardModel>/isCreateTask} === true}"
+					class="iopwbFlexBoxClass sapUiSmallMarginBegin iopInputClass iopwbTaskBoderLightClass" width="97%"/>
+			</HBox>
+		</VBox>
+		<HBox class=" sapUiMediumMarginBegin sapUiSmallMarginTop" width="95%">
+			<VBox>
+				<Label text="Additional Task Items (Optional)" class="iopFontClass iopwbTaskLabelClass"/>
+				<HBox class="sapUiTinyMarginTop" visible="{= ${dashBoardModel>/isCreateTask} === true}">
+					<Label text="Location :" class="iopFontClass iopwbLocLabelClass"/>
+					<Text text="{dashBoardModel>/selectedLocation}" class="iopFontClass sapUiTinyMarginBegin iopwbLocationTextClass"/>
+				</HBox>
+			</VBox>
+			<IconTabBar expandable="false" select="onConfigSelection" backgroundDesign="Solid" class="iopwbAdditionalItemTab"
+				selectedKey="{dashBoardModel>/addItemsTabKey}" id="idAdditionalItemsTab">
+				<items>
+					<IconTabFilter text="All Items" key="All" visible="{= ${dashBoardModel>/isCreateTask} === true || ${dashBoardModel>/isReturnedTask} === true}">
+						<HBox justifyContent="SpaceBetween" class="sapUiTinyMarginBeginEnd">
+							<HBox visible="{= ${dashBoardModel>/isCreateTask} === true}">
+								<Breadcrumbs links="{oTaskPanelDetailModel>/locHierarchy}" class="iopwbBreadCurmbClass">
+									<Link text="{oTaskPanelDetailModel>loc}" class="iopwbLinkClass" press="onHierarchyLinkPress"/>
+								</Breadcrumbs>
+								<Link text="{dashBoardModel>/hierarchyDetails/currentSelectedObject/0/location}" class="iopwbLinkClass" 
+									press="onHierarchyLinkPress" visible="{= ${dashBoardModel>/isDispatch} === false}"/>
+								<Link text="{dashBoardModel>/selectedAlarmLocation}" class="iopwbLinkClass" 
+									visible="{= ${dashBoardModel>/isDispatch} === true}" press="onHierarchyLinkPress"/>
+							</HBox>
+							<Link text="{dashBoardModel>/selectedLocation}" class="iopwbLinkClass" 
+								visible="{= ${dashBoardModel>/isReturnedTask} === true}"/>
+							<Text text="@Location" class="sapUiLargeMarginEnd iopFontClass iopwbLocationTClass"/>
+						</HBox>
+						<ScrollContainer vertical="true" class="iopwbAddScrollContClass">
+							<Table id="idNDTaskTbl" mode="MultiSelect" items="{oAdditionalTaskModel>/taskList}" class="sapUiSizeCompact iopwbTaskItemTbl"
+								selectionChange="onOptionalTaskSelectionChange">
+								<columns>
+									<Column width="70%"></Column>
+									<Column></Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{oAdditionalTaskModel>description}" class="iopFontClass"/>
+											<Text text="{oAdditionalTaskModel>location}" class="iopFontClass"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</ScrollContainer>
+						<HBox justifyContent="End">
+							<Button text="Add Items" press="onAddingItem" class="sapUiSizeCompact"/>
+						</HBox>
+					</IconTabFilter>
+					<IconTabFilter text="Selected Items" key="Selected">
+						<ScrollContainer vertical="true" height="11rem">
+							<Table items="{oTaskPanelDetailModel>/ndTaskList}" class="sapUiSizeCompact">
+								<columns>
+									<Column width="60%">
+										<Text text="Description" class="iopFontClass"/>
+									</Column>
+									<Column>
+										<Text text="@Location" class="iopFontClass"/>
+									</Column>
+									<Column visible="{parts:[{path:'dashBoardModel>/isCreateTask'}, {path:'dashBoardModel>/isReturnedTask'}], formatter:'com.murphy.ioprocapp.util.formatter.showStatus'}" width="5rem">
+										<Text text="Status" class="sapUiTinyMarginEnd iopFontClass iopwbLocationTClass"/>
+									</Column>
+									<Column visible="{= ${dashBoardModel>/isCreateTask} === true || ${dashBoardModel>/isReturnedTask} === true}"></Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{oTaskPanelDetailModel>description}" class="iopFontClass"/>
+											<Text text="{oTaskPanelDetailModel>location}" class="iopFontClass"/>
+											<core:Icon src="{parts:[{path:'oTaskPanelDetailModel>status'}], formatter:'com.murphy.ioprocapp.util.formatter.fngetStatusIcon'}"
+												color="{= ${oTaskPanelDetailModel>status} === 'RESOLVED' ? 'Green' : 'Red' }" 
+												visible="{parts:[{path:'dashBoardModel>/isCreateTask'}, {path:'dashBoardModel>/isReturnedTask'}], formatter:'com.murphy.ioprocapp.util.formatter.showStatus'}"
+												class="sapUiTinyMarginBegin" tooltip="{oTaskPanelDetailModel>status}"/>
+											<HBox visible="{parts:[{path:'dashBoardModel>/isCreateTask'}, {path:'dashBoardModel>/isReturnedTask'}, {path:'oTaskPanelDetailModel>status'}], formatter:'com.murphy.ioprocapp.util.formatter.showDelBtn'}">
+												<Button icon="sap-icon://delete" press="onDeletingItem" type="Transparent" class="sapUiSizeCompact iopBtnClass"
+													visible="{= ${oTaskPanelDetailModel>status} !== 'RESOLVED'}"/>
+												<core:Icon src="sap-icon://sys-enter" color="Green" class="sapUiTinyMarginBegin"
+													visible="{= ${oTaskPanelDetailModel>status} === 'RESOLVED'}" tooltip="{oTaskPanelDetailModel>status}"/>
+											</HBox>
+											
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</ScrollContainer>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</HBox>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,72 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.f">
+	<IconTabBar expandable="false" id="taskMgtTabBar" select="onTaskTabSelection" backgroundDesign="Solid"
+		class="sapUiResponsiveContentPadding iopIconTab iopwbTabBarClass" selectedKey="{dashBoardModel>/selectedTaskTab}">
+		<items>
+			<IconTabFilter text="My Tasks" key="{i18n>ALL}"></IconTabFilter>
+			<IconTabFilter text="{i18n>SENT_ITEMS}" key="{i18n>SENT_ITEMS}"/>
+			<IconTabFilter text="{i18n>NON_DISPATCH}" key="{i18n>NON_DISPATCH}"></IconTabFilter>
+		</items>
+		<content>
+			<VBox class="iopwbBoxStyle">
+				<HBox class="iopwbBoxStyle">
+					<SearchField placeholder="{i18n>searchTask}" class="sapUiSizeCompact" liveChange="onSearchTask"/>
+					<Button id="idTaskCreateBtn" press="onCreateTaskPress" class="sapUiTinyMarginBegin iopwbBtnClass sapUiSizeCompact iopBtnClass"
+						text='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnBtnText"}'/>
+					<Button press="onTaskRefreshPress" class="sapUiTinyMarginBegin iopwbBtnClass sapUiSizeCompact iopBtnClass" icon="sap-icon://synchronize"></Button>
+				</HBox>
+				<ScrollContainer vertical="true" height="{dashBoardModel>/screenSize/taskPanelHeight}" id="taskScrollCont">
+					<List busy="{dashBoardModel>/busyIndicators/rightPanelBusy}" busyIndicatorDelay="0" items="{dashBoardModel>/taskList}" id="idTaskList">
+						<CustomListItem highlight="Warning" class="iopwbListClass" type="Active" press="onPressTaskItem"
+							visible='{parts:["dashBoardModel>/selectedTaskTab","dashBoardModel>status"], formatter:"com.murphy.ioprocapp.util.formatter.fnHighlightColor"}'>
+							<VBox>
+								<Label text='{parts:["dashBoardModel>commentedAt","i18n>COMMENT_ADDED_ON"], formatter:"com.murphy.ioprocapp.util.formatter.getLocalDate"}'
+									class="iopwbTimeClass iopFontClass"
+									visible='{parts:["dashBoardModel>/selectedTaskTab","dashBoardModel>latestComment"], formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskDetails"}'/>
+								<HBox justifyContent="SpaceBetween">
+									<Text text="{dashBoardModel>description}" class="iopwbDescClass iopFontClass"/>
+									<core:Icon src="sap-icon://decline" size="1rem" class="iopwbNonDispatchCloseIcon" tooltip="Delete Item" press="onCloseItem"
+										visible='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskItems"}'/>
+								</HBox>
+								<HBox visible='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskDetails"}'
+									class="iopwbAssignedToBoxClass">
+									<Label text="{i18n>ASSIGNED_TO} :" class="iopwbAssignedLabelClass iopFontClass "/>
+									<Label text="{dashBoardModel>taskOwner}" class="iopwbTextItalicClass iopFontClass "/>
+								</HBox>
+								<HBox justifyContent="SpaceBetween">
+									<Text text="{dashBoardModel>status}" class="iopwbStatusClass sapUiTinyMarginTop iopFontClass"
+										visible='{parts:["dashBoardModel>/selectedTaskTab","dashBoardModel>status"], formatter:"com.murphy.ioprocapp.util.formatter.fnGetStatusBgColor"}'/>
+									<Select class="iopSelectClass sapUiSizeCompact iopAlarmSelectClass iopAlarmClassStyle" width="7rem" visible="false">
+										<core:Item key="High" text="High" class="iopAlarmSelectClass"/>
+										<core:Item key="Medium" text="Medium" class="iopAlarmSelectClass"/>
+										<core:Item key="Low" text="Low" class="iopAlarmSelectClass"/>
+									</Select>
+								</HBox>
+								<HBox justifyContent="SpaceBetween"
+									visible='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskDetails"}'>
+									<Button icon="sap-icon://log" text="{i18n>CLOSE_TASK}" type="Transparent" press="onCloseItem"
+										class="sapUiSizeCompact iopwbTransBtn iopBtnClass"/>
+									<Button icon="sap-icon://notification-2" text="{i18n>ADD_COMMENT}" type="Transparent" class="sapUiSizeCompact iopwbTransBtn iopBtnClass"
+										press="onPressTaskItem"/>
+								</HBox>
+								<HBox class="iopwbMsgBoxClass"
+									visible='{parts:["dashBoardModel>/selectedTaskTab","dashBoardModel>latestComment"], formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskDetails"}'>
+									<f:Avatar initials="{parts:[{path:'dashBoardModel>commentedByDisplay'}], formatter:'com.murphy.ioprocapp.util.formatter.getinitials'}"
+										displaySize="XS" displayShape="Circle" class="sapUiTinyMarginEnd"/>
+									<Text text="{dashBoardModel>latestComment}" class="iopFontClass iopwbCommentClass" maxLines="2" tooltip="{dashBoardModel>latestComment}"/>
+								</HBox>
+								<HBox class="iopwbLocationBoxStyle"
+									visible='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskItems"}'>
+									<Text text="{i18n>LOCATION}" class="iopwbLocationTextClass iopFontClass"/>
+									<Text text="{dashBoardModel>location}" class="iopwbLocationValClass iopFontClass"/>
+								</HBox>
+								<Label text='{parts:["dashBoardModel>createdAtDisplay","i18n>ADDED_ON"], formatter:"com.murphy.ioprocapp.util.formatter.getLocalDate"}'
+									class="iopwbTextItalicClass sapUiTinyMarginTop iopFontClass"
+									visible='{path:"dashBoardModel>/selectedTaskTab", formatter:"com.murphy.ioprocapp.util.formatter.fnShowTaskItems"}'/>
+							</VBox>
+						</CustomListItem>
+					</List>
+				</ScrollContainer>
+			</VBox>
+		</content>
+	</IconTabBar>
+</core:FragmentDefinition>
