@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.RappidJointjs.controller.ProcessFlow" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="MainApp">
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<!--<html:div id="app"></html:div>-->
+					<!--<html:script src="util/chunk-vendors.43abb0d2.js" as="script"></html:script>-->
+					<!--<html:script src="util/app.3456650c.js" as="script"></html:script>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
